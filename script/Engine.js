@@ -13,5 +13,6 @@ var Engine =
     
     update : function()
     {
+        $GM.frame += 1;
     }
 };
