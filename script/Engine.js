@@ -14,5 +14,6 @@ var Engine =
     update : function()
     {
         $GM.frame += 1;
+        console.log($GM.frame);
     }
 };
