@@ -12,6 +12,8 @@ var GameManager =
         
         $GM.addScene(monster);
         $GM.addScene(building);
+        
+        $GM.toScene(building);
     },
     
     addScene : function(scene)
@@ -30,9 +32,22 @@ var GameManager =
         $GM.scenes.push(scene);
     },
     
+    toScene : function(scene)
+    {
+        if($GM.nowScene != null)
+        {
+            $GM.nowScene.css('display','none');
+        }
+        
+        scene.css('display','block');
+        $GM.nowScene = scene;
+    },
+    
     frame : 0,
     
-    scenes : []
+    scenes : [],
+    
+    nowScene : null
 };
 
 //alias
