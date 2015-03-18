@@ -6,13 +6,23 @@ var Scene =
         .attr('id',data.id)
         .data('title',data.title)
         
-        var button = new Button.Button(
+        var containerData = data.containers;
+        
+        for(var i = 0; i < containerData.length; i++)
+        {
+            var container = $('<div>').addClass(containerData[i].class);
+            
+            var buttonData = containerData[i].buttons;
+            
+            for(var i = 0; i < buttonData.length; i++)
             {
-                'text' : "테스트",
-                'id' : "test"
-            });
+                var button = new Button.Button(buttonData[i]);
     
-        element.append(button);
+                container.append(button);
+            }
+            
+            element.append(container);
+        }
         
         return element;
     }

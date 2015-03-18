@@ -21,7 +21,13 @@ var GameManager =
         var header = $('#header');
         var headerButton = $('<div>').addClass('headerButton')
         .text(scene.data('title'))
-        .attr('id', scene.attr('id') + 'Header');
+        .attr('id', scene.attr('id') + 'Header')
+        .data('scene',scene);
+        
+        headerButton.click(function()
+        {
+            $GM.toScene(scene);
+        });
         
         header.append(headerButton);
         
