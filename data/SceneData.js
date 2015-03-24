@@ -7,8 +7,9 @@ var ContainerData =
         "buttons" :
         [
             {
-                "id" : "test1",
-                "text" : "테스트"
+                "id" : "kidnap",
+                "text" : "납치",
+                "tooltip" : "노예로 부려먹을 인간을 납치합니다."
             }
         ]
     },
@@ -18,10 +19,6 @@ var ContainerData =
         "class" : "buildingContainer",
         "buttons" :
         [
-            {
-                "id" : "test2",
-                "text" : "테스트2"
-            }
         ]
     }
 };
@@ -34,7 +31,6 @@ var SceneData =
         "title" : "몬스터",
         "containers" :
         [
-            ContainerData.act
         ]
     },
     
@@ -44,6 +40,7 @@ var SceneData =
         "title" : "건물",
         "containers" :
         [
+            ContainerData.act,
             ContainerData.building
         ]
     }

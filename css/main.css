@@ -97,3 +97,16 @@ div.scene.disabled
     opacity : 0;
     margin-left : 700px;
 }
+
+div.tooltip
+{
+    position : absolute;
+    display : none;
+    margin-left : 50px;
+    padding : 3px;
+    background-color : white;
+    z-order : 1;
+    width : 200px;
+    height : auto;
+    border : 1px solid black;
+}

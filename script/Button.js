@@ -6,6 +6,24 @@ var Button =
         .text(options.text)
         .attr('id',options.id);
         
+        if(options.tooltip != null)
+        {
+            var tooltip = $('<div>').addClass('tooltip')
+                            .text(options.tooltip);
+            
+            element.append(tooltip);
+            
+            element.hover(
+            function()
+            {
+                tooltip.css('display','block');
+            },
+            function()
+            {
+                tooltip.css('display','none');
+            });
+        }
+        
         return element;
     }
 };
