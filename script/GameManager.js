@@ -12,8 +12,6 @@ var GameManager =
         
         $GM.addScene(monster);
         $GM.addScene(building);
-        
-        $GM.toScene(building);
     },
     
     addScene : function(scene)
@@ -26,13 +24,20 @@ var GameManager =
         
         headerButton.click(function()
         {
+            if($GM.nowHeader != null)
+            {
+                $GM.nowHeader.removeClass('selected');
+            }
+            
+            $GM.nowHeader = headerButton;
+            $GM.nowHeader.addClass('selected');
             $GM.toScene(scene);
         });
         
         header.append(headerButton);
         
         //기본적으로 안 보임. 선택되면 보임
-        scene.css('display','none');
+        Scene.disable(scene);
         var contents = $('#contents');
         contents.append(scene);
         $GM.scenes.push(scene);
@@ -42,10 +47,10 @@ var GameManager =
     {
         if($GM.nowScene != null)
         {
-            $GM.nowScene.css('display','none');
+            Scene.disable($GM.nowScene);
         }
         
-        scene.css('display','block');
+        Scene.enable(scene);
         $GM.nowScene = scene;
     },
     
@@ -53,7 +58,8 @@ var GameManager =
     
     scenes : [],
     
-    nowScene : null
+    nowScene : null,
+    nowHeader : null
 };
 
 //alias

@@ -81,3 +81,19 @@ div.headerButton.selected, div.headerButton.selected:hover
     cursor : default;
     text-decoration : underline;
 }
+
+div.scene
+{
+    position : absolute;
+    visibility : visible;
+    opacity : 1;
+    margin-left : 0px;
+    transition : visibility 0.7s, opacity 0.7s, margin-left 0.7s;
+}
+
+div.scene.disabled
+{
+    visibility : hidden;
+    opacity : 0;
+    margin-left : 700px;
+}

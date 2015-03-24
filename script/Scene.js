@@ -25,5 +25,15 @@ var Scene =
         }
         
         return element;
+    },
+    
+    disable : function(scene)
+    {
+        scene.addClass('disabled');
+    },
+    
+    enable : function(scene)
+    {
+        scene.removeClass('disabled');
     }
 };
