@@ -24,7 +24,15 @@ var ContainerData =
     
     "building" :
     {
-        "class" : "buildingContainer",
+        "class" : "building",
+        "buttons" :
+        [
+        ]
+    },
+    
+    "monster" :
+    {
+        "class" : "monster",
         "buttons" :
         [
         ]

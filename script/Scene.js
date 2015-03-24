@@ -4,7 +4,7 @@ var Scene =
     {
         var element = $('<div>').addClass('scene')
         .attr('id',data.id)
-        .data('title',data.title)
+        .data('title',data.title);
         
         var containerData = data.containers;
         

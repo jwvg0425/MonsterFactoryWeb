@@ -11,6 +11,7 @@ var GameManager =
         var building = new Scene.Scene(SceneData["building"]);
         
         $GM.addScene(building);
+        $GM.addScene(monster);
     },
     
     addScene : function(scene)
