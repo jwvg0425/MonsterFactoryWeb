@@ -24,6 +24,11 @@ var Button =
             });
         }
         
+        if(options.align == "left")
+        {
+            element.css("float","left");
+        }
+        
         return element;
     }
 };

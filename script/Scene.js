@@ -10,16 +10,7 @@ var Scene =
         
         for(var i = 0; i < containerData.length; i++)
         {
-            var container = $('<div>').addClass(containerData[i].class);
-            
-            var buttonData = containerData[i].buttons;
-            
-            for(var i = 0; i < buttonData.length; i++)
-            {
-                var button = new Button.Button(buttonData[i]);
-    
-                container.append(button);
-            }
+            var container = new Container.Container(containerData[i]);
             
             element.append(container);
         }

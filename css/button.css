@@ -8,6 +8,8 @@ div.button
     width : 80px;
     border : 1px solid gray;
     padding : 10px 10px;
+    margin-bottom : 20px;
+    margin-right : 20px;
     border-radius : 5px;
     cursor : pointer;
     box-shadow : 2px 2px rgb(208,208,208);
