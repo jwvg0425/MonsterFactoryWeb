@@ -25,6 +25,8 @@ var ContainerData =
     "building" :
     {
         "class" : "building",
+        "head" : "건물",
+        "width" : 330,
         "buttons" :
         [
         ]
@@ -33,6 +35,18 @@ var ContainerData =
     "monster" :
     {
         "class" : "monster",
+        "head" : "몬스터",
+        "width" : 700,
+        "buttons" :
+        [
+        ]
+    },
+    
+    "infomation" :
+    {
+        "class" : "infomation",
+        "head" : "정보",
+        "width" : 330,
         "buttons" :
         [
         ]

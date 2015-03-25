@@ -6,6 +6,7 @@ var SceneData =
         "title" : "몬스터",
         "containers" :
         [
+            ContainerData.monster
         ]
     },
     
@@ -16,7 +17,8 @@ var SceneData =
         "containers" :
         [
             ContainerData.act,
-            ContainerData.building
+            ContainerData.building,
+            ContainerData.infomation
         ]
     }
 };

@@ -25,3 +25,13 @@ div.button.disabled, div.button.disabled:hover
     cursor : default;
     text-decoration : none;
 }
+
+div.button div.cooldown
+{
+    position : absolute;
+    height : 100%;
+    top : 0px;
+    left : 0px;
+    background-color : gray;
+    z-index : -1;
+};

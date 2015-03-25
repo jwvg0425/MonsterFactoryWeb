@@ -29,6 +29,8 @@ var Button =
             element.css("float","left");
         }
         
+        element.append($('<div>').addClass('coolDown'));
+        
         return element;
     }
 };
