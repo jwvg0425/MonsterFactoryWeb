@@ -11,7 +11,12 @@ var ContainerData =
                 "id" : "kidnap",
                 "text" : "납치",
                 "tooltip" : "노예로 부려먹을 인간을 납치합니다.",
-                "align" : "left"
+                "align" : "left",
+                "cooldown" : 1000,
+                "click" : function()
+                {
+                    console.log("click");
+                }
             },
             {
                 "id" : "work",

@@ -99,7 +99,7 @@ div.scene.disabled
     margin-left : 700px;
 }
 
-div.tooltip
+div.button div.tooltip
 {
     position : absolute;
     display : none;

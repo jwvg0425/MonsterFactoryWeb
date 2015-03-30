@@ -6,6 +6,7 @@ var Button =
         .text(options.text)
         .attr('id',options.id);
         
+        //툴팁 존재 여부
         if(options.tooltip != null)
         {
             var tooltip = $('<div>').addClass('tooltip')
@@ -24,12 +25,40 @@ var Button =
             });
         }
         
+        //가로 정렬인지 세로 정렬인지 설정
         if(options.align == "left")
         {
             element.css("float","left");
         }
         
-        element.append($('<div>').addClass('coolDown'));
+        if(options.click != null)
+        {
+            if(options.cooldown != null)
+            {
+                var cool = $('<div>').attr('id','cooldown').on('transitionend', function()
+                    {
+                        if(cool.hasClass('down'))
+                        {
+                            cool.removeClass('down');
+                            options.click();
+                        }
+                    });
+            
+                element.append(cool);
+            
+                element.on("click",function()
+                {
+                    if(!cool.hasClass('down'))
+                    {
+                        cool.addClass('down');
+                    }
+                });
+            }
+            else
+            {
+                element.on("click", options.click);
+            }
+        }
         
         return element;
     }

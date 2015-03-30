@@ -12,6 +12,7 @@ div.button
     margin-right : 20px;
     border-radius : 5px;
     cursor : pointer;
+    background-color : transparent;
     box-shadow : 2px 2px rgb(208,208,208);
 }
 
@@ -26,12 +27,20 @@ div.button.disabled, div.button.disabled:hover
     text-decoration : none;
 }
 
-div.button div.cooldown
+div.button div#cooldown
 {
     position : absolute;
+    width : 100%;
     height : 100%;
-    top : 0px;
     left : 0px;
+    top : 0px;
+    opacity : 0.0;
     background-color : gray;
-    z-index : -1;
-};
+}
+
+div.button div#cooldown.down
+{
+    opacity : 0.5;
+    width : 0%;
+    transition : width 3.0s;
+}
