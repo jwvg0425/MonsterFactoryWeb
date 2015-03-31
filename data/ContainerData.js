@@ -5,9 +5,9 @@ var ContainerData =
         "class" : "act",
         "head" : "행동",
         "width" : 700,
-        "buttons" :
+        "objects" :
         [
-            {
+            Button.Button({
                 "id" : "kidnap",
                 "text" : "납치",
                 "tooltip" : "<p>노예로 부려먹을 인간을 납치합니다.</p> 돈 50 소모",
@@ -24,8 +24,8 @@ var ContainerData =
                         "amount" : 50
                     }
                 ]
-            },
-            {
+            }),
+            Button.Button({
                 "id" : "work",
                 "text" : "노동",
                 "tooltip" : "직접 일해서 돈을 법니다.",
@@ -35,7 +35,7 @@ var ContainerData =
                 {
                     $GM.money += 10;
                 }
-            }
+            })
         ]
     },
     
@@ -44,7 +44,7 @@ var ContainerData =
         "class" : "building",
         "head" : "건물",
         "width" : 330,
-        "buttons" :
+        "objects" :
         [
         ]
     },
@@ -54,7 +54,7 @@ var ContainerData =
         "class" : "monster",
         "head" : "몬스터",
         "width" : 700,
-        "buttons" :
+        "objects" :
         [
         ]
     },
@@ -64,11 +64,20 @@ var ContainerData =
         "class" : "infomation",
         "head" : "정보",
         "width" : 330,
-        "buttons" :
-        [
-        ],
         "objects" :
         [
+            Info.Info({
+                texts : function()
+                {
+                    return "돈 : " + $GM.money + "( +" + $GM.slave + "/s)";
+                },
+            }),
+            Info.Info({
+                texts : function()
+                {
+                    return "노예 : " + $GM.slave;
+                }
+            })
         ]
     }
 };

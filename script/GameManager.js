@@ -54,6 +54,11 @@ var GameManager =
         $GM.nowScene = scene;
     },
     
+    updateBySecond : function()
+    {
+        money += slave;
+    },
+    
     frame : 0,
     
     money : 0,
@@ -62,7 +67,9 @@ var GameManager =
     scenes : [],
     
     nowScene : null,
-    nowHeader : null
+    nowHeader : null,
+    
+    updateList : []
 };
 
 //alias

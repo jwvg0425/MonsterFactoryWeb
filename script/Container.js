@@ -24,14 +24,16 @@ var Container =
         {
             element.css("height", options.height);
         }
-            
-        var buttonData = options.buttons;
-            
-        for(var i = 0; i < buttonData.length; i++)
+        
+        //버튼 추가
+        if(options.objects != null)
         {
-            var button = new Button.Button(buttonData[i]);
-    
-            element.append(button);
+            var objects = options.objects;
+            
+            for(var i = 0; i < objects.length; i++)
+            {
+                element.append(objects[i]);
+            }
         }
         
         return element;
