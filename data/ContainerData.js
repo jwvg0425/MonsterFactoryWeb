@@ -15,7 +15,7 @@ var ContainerData =
                 "cooldown" : 10000,
                 "click" : function()
                 {
-                    console.log("click");
+                    $GM.slave += 1;
                 }
             },
             {
@@ -26,7 +26,7 @@ var ContainerData =
                 "cooldown" : 1000,
                 "click" : function()
                 {
-                    console.log("click2");
+                    $GM.money += 10;
                 }
             }
         ]
