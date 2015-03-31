@@ -35,22 +35,21 @@ var Button =
         {
             if(options.cooldown != null)
             {
-                var cool = $('<div>').attr('id','cooldown').on('transitionend', function()
-                    {
-                        if(cool.hasClass('down'))
-                        {
-                            cool.removeClass('down');
-                            options.click();
-                        }
-                    });
+                var cool = $('<div>').attr('id','cooldown');
             
                 element.append(cool);
             
                 element.on("click",function()
                 {
-                    if(!cool.hasClass('down'))
+                    if(!cool.hasClass('cool'))
                     {
-                        cool.addClass('down');
+                        cool.addClass('cool')
+                        .animate({width : "0%"}, options.cooldown, 
+                        function()
+                        {
+                            cool.removeClass('cool').css("width","100%");
+                            options.click();
+                        });
                     }
                 });
             }

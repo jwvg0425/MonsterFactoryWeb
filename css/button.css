@@ -38,9 +38,7 @@ div.button div#cooldown
     background-color : gray;
 }
 
-div.button div#cooldown.down
+div.button div#cooldown.cool
 {
     opacity : 0.5;
-    width : 0%;
-    transition : width 3.0s;
 }
