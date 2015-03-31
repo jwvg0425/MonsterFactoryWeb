@@ -23,6 +23,7 @@ div.button:hover
 
 div.button.disabled, div.button.disabled:hover
 {
+    color : gray;
     cursor : default;
     text-decoration : none;
 }

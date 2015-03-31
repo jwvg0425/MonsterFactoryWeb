@@ -27,7 +27,18 @@ var BuildingData =
                     "kind" : "slave",
                     "amount" : 5
                 }
-            ]
+            ],
+            "isEnableState" : function()
+            {
+                if($GM.colony >= $GM.maxColony)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
         }
     }
 };

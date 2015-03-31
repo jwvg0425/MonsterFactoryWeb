@@ -66,7 +66,7 @@ var GameManager =
             $GM.addScene(monster);
         }
         
-        if($GM.colony == 5)
+        if($GM.colony >= $GM.maxColony)
         {
             return;
         }
@@ -79,6 +79,7 @@ var GameManager =
     money : 0,
     slave : 0,
     colony : 0,
+    maxColony : 1,
     
     scenes : [],
     
