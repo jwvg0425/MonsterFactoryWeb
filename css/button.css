@@ -42,3 +42,22 @@ div.button div#cooldown.cool
 {
     opacity : 0.5;
 }
+
+div.button div.tooltip
+{
+    position : absolute;
+    display : none;
+    margin-left : 50px;
+    padding : 3px;
+    background-color : white;
+    z-index : 10;
+    width : 200px;
+    height : auto;
+    border : 1px solid black;
+}
+
+div.button div.tooltip p
+{
+    margin-top : 0px;
+    margin-bottom : 5px;
+}

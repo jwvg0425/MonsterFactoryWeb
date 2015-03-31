@@ -10,13 +10,20 @@ var ContainerData =
             {
                 "id" : "kidnap",
                 "text" : "납치",
-                "tooltip" : "노예로 부려먹을 인간을 납치합니다.",
+                "tooltip" : "<p>노예로 부려먹을 인간을 납치합니다.</p> 돈 50 소모",
                 "align" : "left",
                 "cooldown" : 10000,
                 "click" : function()
                 {
                     $GM.slave += 1;
-                }
+                },
+                "resource" :
+                [
+                    {
+                        "kind" : "money",
+                        "amount" : 50
+                    }
+                ]
             },
             {
                 "id" : "work",
@@ -58,6 +65,9 @@ var ContainerData =
         "head" : "정보",
         "width" : 330,
         "buttons" :
+        [
+        ],
+        "objects" :
         [
         ]
     }

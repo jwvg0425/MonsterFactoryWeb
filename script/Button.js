@@ -4,13 +4,14 @@ var Button =
     {
         var element = $('<div>').addClass('button')
         .text(options.text)
-        .attr('id',options.id);
+        .attr('id',options.id)
+        .data("resource",options.resource);
         
         //툴팁 존재 여부
         if(options.tooltip != null)
         {
             var tooltip = $('<div>').addClass('tooltip')
-                            .text(options.tooltip);
+                            .html(options.tooltip);
             
             element.append(tooltip);
             
@@ -41,6 +42,13 @@ var Button =
             
                 element.on("click",function()
                 {
+                    if(!Button.checkResource(element))
+                    {
+                        return;
+                    }
+                    
+                    Button.consumeResource(element);
+                    
                     if(!cool.hasClass('cool'))
                     {
                         cool.addClass('cool')
@@ -60,5 +68,40 @@ var Button =
         }
         
         return element;
+    },
+    
+    checkResource : function(button)
+    {
+        var resource = button.data("resource");
+        
+        if(resource == null)
+        {
+            return true;
+        }
+        
+        for(var i = 0 ; i < resource.length; i++)
+        {
+            if($GM[resource[i].kind] < resource[i].amount)
+            {
+                return false;
+            }
+        }
+        
+        return true;
+    },
+    
+    consumeResource : function(button)
+    {
+        var resource = button.data("resource");
+        
+        if(resource == null)
+        {
+            return;
+        }
+        
+         for(var i = 0 ; i < resource.length; i++)
+        {
+            $GM[resource[i].kind] -= resource[i].amount;
+        }
     }
 };
