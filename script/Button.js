@@ -41,16 +41,16 @@ var Button =
                 element.append(cool);
             
                 element.on("click",function()
-                {
-                    if(!Button.checkResource(element))
-                    {
-                        return;
-                    }
-                    
-                    Button.consumeResource(element);
-                    
+                { 
                     if(!cool.hasClass('cool'))
                     {
+                        if(!Button.checkResource(element))
+                        {
+                            return;
+                        }
+                    
+                        Button.consumeResource(element);
+                        
                         cool.addClass('cool')
                         .animate({width : "0%"}, options.cooldown, 
                         function()

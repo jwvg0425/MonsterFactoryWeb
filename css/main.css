@@ -115,3 +115,31 @@ p.containerHead
     font-size : 18px;
     font-weight : bold;
 }
+
+div.building
+{
+    width : 100%;
+}
+
+div.building img
+{
+    margin-top : 30px;
+    margin-left : 10px;
+    margin-bottom : 30px;
+    float : left;
+}
+
+div.building div.name
+{
+    text-align : center;
+    width : 100%;
+    font-size : 20px;
+    font-weight : bold;
+}
+
+div.building div.desc
+{
+    margin-left : 20px;
+    width : 250px;
+    float : left;
+}

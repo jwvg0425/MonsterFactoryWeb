@@ -46,6 +46,7 @@ var ContainerData =
         "width" : 330,
         "objects" :
         [
+            Building.Building(BuildingData.colony)
         ]
     },
     

@@ -56,7 +56,7 @@ var GameManager =
     
     updateBySecond : function()
     {
-        money += slave;
+        $GM.money += $GM.slave;
     },
     
     frame : 0,
