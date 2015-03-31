@@ -10,9 +10,9 @@ var ContainerData =
             Button.Button({
                 "id" : "kidnap",
                 "text" : "납치",
-                "tooltip" : "<p>노예로 부려먹을 인간을 납치합니다.</p> 돈 50 소모",
+                "tooltip" : "<p>노예로 부려먹을 인간을 납치합니다.</p> 50 골드 소모",
                 "align" : "left",
-                "cooldown" : 10,
+                "cooldown" : 10000,
                 "click" : function()
                 {
                     $GM.slave += 1;
@@ -23,18 +23,20 @@ var ContainerData =
                         "kind" : "money",
                         "amount" : 50
                     }
-                ]
+                ],
+                "notification" : "노예로 부려먹을 인간을 1명 납치했습니다."
             }),
             Button.Button({
                 "id" : "work",
                 "text" : "노동",
                 "tooltip" : "직접 일해서 돈을 법니다.",
                 "align" : "left",
-                "cooldown" : 10,
+                "cooldown" : 1000,
                 "click" : function()
                 {
                     $GM.money += 10;
-                }
+                },
+                "notification" : "열심히 일해서 10 골드를 모았습니다."
             })
         ]
     },
@@ -70,7 +72,7 @@ var ContainerData =
             Info.Info({
                 texts : function()
                 {
-                    return "돈 : " + $GM.money + "( +" + $GM.slave + "/s)";
+                    return "골드 : " + $GM.money + "( +" + $GM.slave + "/s)";
                 },
             }),
             Info.Info({

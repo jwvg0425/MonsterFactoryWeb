@@ -77,6 +77,12 @@ var Button =
                         {
                             cool.removeClass('cool').css("width","100%");
                             options.click();
+                            
+                            //notification 발송
+                            if(options.notification != null)
+                            {
+                                Notification.Notification(options.notification);
+                            }
                         });
                     }
                 });
@@ -94,6 +100,12 @@ var Button =
                     Button.consumeResource(element);
                     
                     options.click();
+                    
+                    //notification 발송
+                    if(options.notification != null)
+                    {
+                        Notification.Notification(options.notification);
+                    }
                 });
             }
         }

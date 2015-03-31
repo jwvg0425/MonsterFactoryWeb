@@ -9,7 +9,7 @@ var BuildingData =
         {
             "id" : "buy",
             "text" : "구매",
-            "tooltip" : "<p>돈 300 소모</p><p>노예 5 소모</p>",
+            "tooltip" : "<p>300 골드 소모</p><p>5 노예 소모</p>",
             "align" : "left",
             "x" : "60px",
             "y" : "10px",
@@ -38,7 +38,8 @@ var BuildingData =
                 {
                     return true;
                 }
-            }
+            },
+            "notification" : "콜로니를 건축 완료했습니다."
         }
     }
 };
