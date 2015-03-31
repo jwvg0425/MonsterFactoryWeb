@@ -32,6 +32,16 @@ var Button =
             element.css("float","left");
         }
         
+        if(options.x != null)
+        {
+            element.css("margin-left", options.x);
+        }
+        
+        if(options.y != null)
+        {
+            element.css("margin-top",options.y);
+        }
+        
         if(options.click != null)
         {
             if(options.cooldown != null)
@@ -63,7 +73,18 @@ var Button =
             }
             else
             {
-                element.on("click", options.click);
+                
+                element.on("click", function()
+                {
+                    if(!Button.checkResource(element))
+                    {
+                        return;
+                    }
+                    
+                    Button.consumeResource(element);
+                    
+                    options.click();
+                });
             }
         }
         

@@ -7,11 +7,9 @@ var GameManager =
     
     initScenes : function()
     {
-        var monster = new Scene.Scene(SceneData["monster"]);
         var building = new Scene.Scene(SceneData["building"]);
         
         $GM.addScene(building);
-        $GM.addScene(monster);
     },
     
     addScene : function(scene)
@@ -59,10 +57,28 @@ var GameManager =
         $GM.money += $GM.slave;
     },
     
+    addColony : function()
+    {
+        if($GM.colony == 0)
+        {
+            var monster = new Scene.Scene(SceneData["monster"]);
+            
+            $GM.addScene(monster);
+        }
+        
+        if($GM.colony == 5)
+        {
+            return;
+        }
+        
+        $GM.colony += 1;
+    },
+    
     frame : 0,
     
     money : 0,
     slave : 0,
+    colony : 0,
     
     scenes : [],
     

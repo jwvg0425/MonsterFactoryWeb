@@ -78,6 +78,12 @@ var ContainerData =
                 {
                     return "노예 : " + $GM.slave;
                 }
+            }),
+            Info.Info({
+                texts : function()
+                {
+                    return "콜로니 : " + $GM.colony + " / 5";
+                }
             })
         ]
     }
