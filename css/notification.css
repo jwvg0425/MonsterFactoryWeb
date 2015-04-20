@@ -9,7 +9,7 @@ div#notifications
     line-height : normal;
     letter-spacing : normal;
     
-    position : absolute;
+    float : left;
     width : 200px;
     height : 100%;
     margin : 0px;

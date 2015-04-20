@@ -71,10 +71,15 @@ var ContainerData =
     {
         "class" : "monster",
         "head" : "몬스터",
-        "width" : 700,
+        "width" : 330,
         "objects" : function()
         {
             var arr = [];
+            
+            arr.push(
+                new Building.Building(BuildingData.colony)
+            );
+            
             return arr;
         }
     },

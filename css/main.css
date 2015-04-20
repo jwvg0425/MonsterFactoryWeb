@@ -29,6 +29,13 @@ body
     background-color : transparent;
 }
 
+article
+{
+    position : relative;
+    width : 1100px;
+    margin : auto;
+}
+
 div#wrapper
 {
     font-family: 'Jeju Gothic', serif;
@@ -36,10 +43,8 @@ div#wrapper
     font-weight : normal;
     line-height : normal;
     letter-spacing : normal;
-    
-    position : relative;
+    float : left;
     width : 720px;
-    margin : auto;
     padding : 20px 0 0 20px;
 }
 
