@@ -13,9 +13,10 @@ var BuildingData =
             "align" : "left",
             "x" : "60px",
             "y" : "10px",
-            "click" : function()
+            "click" : function(button)
             {
                 $GM.addColony(1);
+                $(".container.monster").append(new Colony.Colony(MonsterData.none));
             },
             "resource" :
             [

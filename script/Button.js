@@ -56,6 +56,7 @@ var Button =
         {
             if(options.cooldown != null)
             {
+                //쿨다운이 있는 경우 쿨다운 끝나고 처리.
                 var cool = $('<div>').attr('id','cooldown');
             
                 element.append(cool);
@@ -76,7 +77,7 @@ var Button =
                         function()
                         {
                             cool.removeClass('cool').css("width","100%");
-                            options.click();
+                            options.click(element);
                             
                             //notification 발송
                             if(options.notification != null)
@@ -89,7 +90,7 @@ var Button =
             }
             else
             {
-                
+                //쿨다운 없는 경우 바로 처리.
                 element.on("click", function()
                 {
                     if(!Button.checkResource(element) || element.hasClass('disabled'))
@@ -99,7 +100,7 @@ var Button =
                     
                     Button.consumeResource(element);
                     
-                    options.click();
+                    options.click(element);
                     
                     //notification 발송
                     if(options.notification != null)

@@ -16,7 +16,7 @@ var ContainerData =
                     "tooltip" : "<p>노예로 부려먹을 인간을 납치합니다.</p> 50 골드 소모",
                     "align" : "left",
                     "cooldown" : 10000,
-                    "click" : function()
+                    "click" : function(button)
                     {
                         $GM.slave += 1;
                     },
@@ -38,7 +38,7 @@ var ContainerData =
                     "tooltip" : "직접 일해서 돈을 법니다.",
                     "align" : "left",
                     "cooldown" : 1000,
-                    "click" : function()
+                    "click" : function(button)
                     {
                         $GM.money += 10;
                     },
@@ -75,10 +75,6 @@ var ContainerData =
         "objects" : function()
         {
             var arr = [];
-            
-            arr.push(
-                new Building.Building(BuildingData.colony)
-            );
             
             return arr;
         }
