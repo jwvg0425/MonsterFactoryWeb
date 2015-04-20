@@ -6,7 +6,8 @@ var SceneData =
         "title" : "몬스터",
         "containers" :
         [
-            ContainerData.monster
+            ContainerData.monster,
+            ContainerData.infomation
         ]
     },
     

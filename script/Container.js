@@ -28,7 +28,7 @@ var Container =
         //버튼 추가
         if(options.objects != null)
         {
-            var objects = options.objects;
+            var objects = options.objects();
             
             for(var i = 0; i < objects.length; i++)
             {
