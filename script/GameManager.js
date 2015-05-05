@@ -72,14 +72,16 @@ var GameManager =
         }
         
         $GM.colony += 1;
+        
+        Engine.draw();
     },
     
     frame : 0,
     
-    money : 0,
-    slave : 0,
+    money : 10000,
+    slave : 100,
     colony : 0,
-    maxColony : 1,
+    maxColony : 3,
     
     scenes : [],
     

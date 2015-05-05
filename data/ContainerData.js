@@ -54,7 +54,7 @@ var ContainerData =
     {
         "class" : "building",
         "head" : "건물",
-        "width" : 330,
+        "width" : 430,
         "objects" : function()
         {
             var arr = [];
@@ -71,7 +71,7 @@ var ContainerData =
     {
         "class" : "monster",
         "head" : "몬스터",
-        "width" : 330,
+        "width" : 430,
         "objects" : function()
         {
             var arr = [];
@@ -84,7 +84,7 @@ var ContainerData =
     {
         "class" : "infomation",
         "head" : "정보",
-        "width" : 330,
+        "width" : 230,
         "objects" : function()
         {
             var arr = [];

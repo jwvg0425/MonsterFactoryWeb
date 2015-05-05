@@ -9,7 +9,7 @@ div.colony
     margin-top : 10px;
 }
 
-div.colony img
+div.colony canvas#monsterImage
 {
     margin-top : 10px;
     margin-left : 10px;
@@ -31,6 +31,6 @@ div.colony div.desc
 {
     margin-top : 10px;
     margin-left : 20px;
-    width : 250px;
+    width : 350px;
     float : left;
 }

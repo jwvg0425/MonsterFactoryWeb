@@ -11,7 +11,7 @@ var BuildingData =
             "text" : "구매",
             "tooltip" : "<p>300 골드 소모</p><p>5 노예 소모</p>",
             "align" : "left",
-            "x" : "60px",
+            "x" : "110px",
             "y" : "10px",
             "click" : function(button)
             {
