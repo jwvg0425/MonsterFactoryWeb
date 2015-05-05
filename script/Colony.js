@@ -6,7 +6,7 @@ var Colony =
         var element = $('<div>').addClass('colony');
         
         Colony.addContents(element, options);
-        setInterval(Colony.draw.bind(element), 100);
+        setInterval(Colony.draw.bind(element), 300);
         
         return element;
     },
@@ -35,6 +35,14 @@ var Colony =
         colony.data("images",images);
         colony.data("nowFrame",0);
         
+        colony.data("exp",options.exp);
+        colony.data("nowExp",0);
+        colony.data("evolve",options.evolve);
+            
+        var bar = $('<div>').addClass('exp');
+        bar.append($('<div>').addClass('expGauge'));
+        colony.append(bar);
+        
         for(var i = 0; i < options.buttons.length; i++)
         {
             colony.append(Button.Button(options.buttons[i]));
@@ -48,6 +56,7 @@ var Colony =
         var imageNum = this.data("images").length;
         var imageIdx = this.data("nowFrame");
         
+        context.clearRect(0,0,44,44);
         context.drawImage(this.data("images")[imageIdx], 2, 2, 40, 40);
         
         imageIdx++;
@@ -58,5 +67,21 @@ var Colony =
         }
         
         this.data("nowFrame", imageIdx);
+    },
+    
+    addExp : function(colony, exp)
+    {
+        var nowExp = colony.data("nowExp");
+        nowExp += exp;
+        colony.data("nowExp", nowExp);
+        
+        var percent = nowExp * 100.0 / colony.data("exp");
+        
+        colony.find('.expGauge').css('width', percent + "%");
+        
+        if(nowExp >= colony.data("exp"))
+        {
+            colony.data("evolve")(colony);
+        }
     }
 };

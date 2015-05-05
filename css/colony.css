@@ -34,3 +34,28 @@ div.colony div.desc
     width : 350px;
     float : left;
 }
+
+div.colony div.exp
+{
+    position : relative;
+    width : 400px;
+    height : 20px;
+    border : 1px solid gray;
+    margin-left : 10px;
+    top : 100px;
+    border-radius : 5px;
+    background-color : transparent;
+    box-shadow : 2px 2px rgb(208,208,208);
+}
+
+div.colony div.exp div.expGauge
+{
+    position : absolute;
+    width : 0px;
+    height : 100%;
+    left : 0px;
+    top : 0px;
+    z-index : 0;
+    background-color : rgb(196,255,196);
+    transition : width 0.5s;
+}
