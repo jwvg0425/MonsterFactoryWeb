@@ -116,28 +116,7 @@ var GameManager =
         if($GM.mine == 0)
         {
             $('div.container.act').append(
-                new Button.Button({
-                    "id" : "mining",
-                    "text" : "채굴",
-                    "tooltip" : "<p>광산에서 채굴을 합니다</p>",
-                    "align" : "left",
-                    "cooldown" : 20000,
-                    "click" : function(button)
-                    {
-                        $GM.money += 10 * $GM.slave;
-                        if(Math.random() < 0.1)
-                        {
-                            $GM.gem += 1;
-                        }
-                    },
-                    "resource" :
-                    [
-                    ],
-                    "notification" : function()
-                    {
-                        return "채굴을 완료했습니다.";
-                    }
-                })
+                new Button.Button(ButtonData.mining)
             );
         }
         

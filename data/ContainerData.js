@@ -10,46 +10,11 @@ var ContainerData =
             var arr = [];
             
             arr.push(
-                new Button.Button({
-                    "id" : "kidnap",
-                    "text" : "납치",
-                    "tooltip" : "<p>노예로 부려먹을 인간을 납치합니다.</p> 50 골드 소모",
-                    "align" : "left",
-                    "cooldown" : 10000,
-                    "click" : function(button)
-                    {
-                        $GM.slave += 1;
-                    },
-                    "resource" :
-                    [
-                        {
-                            "kind" : "money",
-                            "amount" : 50
-                        }
-                    ],
-                    "notification" : function()
-                    {
-                        return "노예로 부려먹을 인간을 1명 납치했습니다.";
-                    }
-                })
+                new Button.Button(ButtonData.kidnap)
             );
             
             arr.push(    
-                new Button.Button({
-                    "id" : "work",
-                    "text" : "노동",
-                    "tooltip" : "직접 일해서 돈을 법니다.",
-                    "align" : "left",
-                    "cooldown" : 1000,
-                    "click" : function(button)
-                    {
-                        $GM.money += $GM.getClickMoney();
-                    },
-                    "notification" : function()
-                    {
-                        return "열심히 일해서 " + $GM.getClickMoney() + "골드를 모았습니다.";
-                    }
-                })
+                new Button.Button(ButtonData.work)
             );
             
             return arr;
