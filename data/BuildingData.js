@@ -29,7 +29,7 @@ var BuildingData =
                     "amount" : 5
                 }
             ],
-            "isEnableState" : function()
+            "isEnableState" : function(button)
             {
                 if($GM.colony >= $GM.maxColony)
                 {
@@ -75,7 +75,7 @@ var BuildingData =
                     "amount" : 10
                 }
             ],
-            "isEnableState" : function()
+            "isEnableState" : function(button)
             {
                 if($GM.mine >= $GM.maxMine)
                 {

@@ -57,7 +57,7 @@ var MonsterData =
                 "align" : "left",
                 "x" : "20px",
                 "y" : "10px",
-                "cooldown" : 10000,
+                "cooldown" : 10,
                 "click" : function(button)
                 {
                     Colony.addExp(button.parent(), 5);
@@ -65,7 +65,8 @@ var MonsterData =
                 "notification" : function()
                 {
                     return "알을 부드럽게 쓰다듬어주었습니다.";
-                }
+                },
+                "isEnableState" : Button.checkButtonInGroupEnable
             },
             {
                 "id" : "water",
@@ -88,7 +89,8 @@ var MonsterData =
                 "notification" : function()
                 {
                     return "알에 물을 뿌려주었습니다.";
-                }
+                },
+                "isEnableState" :  Button.checkButtonInGroupEnable
             },
             {
                 "id" : "talk",
@@ -104,7 +106,8 @@ var MonsterData =
                 "notification" : function()
                 {
                     return "알에게 말을 걸어주었습니다.";
-                }
+                },
+                "isEnableState" :  Button.checkButtonInGroupEnable
             }
         ],
         "evolve" : function(colony)
@@ -119,6 +122,70 @@ var MonsterData =
         "desc" : "몬스터의 유충이다.",
         "exp" : 200,
         "buttons" :
-        []
+        [
+            {
+                "id" : "feed",
+                "text" : "먹이주기",
+                "tooltip" : "<p>맛있는 먹이를 줍니다.</p><p>10골드 소모</p>1노예 소모",
+                "align" : "left",
+                "x" : "20px",
+                "y" : "10px",
+                "cooldown" : 40000,
+                "click" : function(button)
+                {
+                    Colony.addExp(button.parent(), 20);
+                },
+                "resource" :
+                [
+                    {
+                        "kind" : "money",
+                        "amount" : 10
+                    },
+                    {
+                        "kind" : "slave",
+                        "amount" : 1
+                    }
+                ],
+                "notification" : function()
+                {
+                    return "유충에게 먹이를 주었습니다.";
+                },
+                "isEnableState" :  Button.checkButtonInGroupEnable
+            },
+            {
+                "id" : "meditation",
+                "text" : "명상",
+                "tooltip" : "<p>정신 수양을 위해 명상을 시킵니다.</p>",
+                "align" : "left",
+                "y" : "10px",
+                "cooldown" : 50000,
+                "click" : function(button)
+                {
+                    Colony.addExp(button.parent(), 50);
+                },
+                "notification" : function()
+                {
+                    return "유충의 명상이 끝났습니다.";
+                },
+                "isEnableState" :  Button.checkButtonInGroupEnable
+            },
+            {
+                "id" : "sleep",
+                "text" : "숙면",
+                "tooltip" : "<p>건강을 위해 숙면을 취합니다.</p>",
+                "align" : "left",
+                "y" : "10px",
+                "cooldown" : 20000,
+                "click" : function(button)
+                {
+                    Colony.addExp(button.parent(), 30);
+                },
+                "notification" : function()
+                {
+                    return "유충이 푹 자고 일어났습니다.";
+                },
+                "isEnableState" :  Button.checkButtonInGroupEnable
+            }
+        ]
     }
 };

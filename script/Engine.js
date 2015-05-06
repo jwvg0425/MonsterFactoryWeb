@@ -4,6 +4,12 @@ $(function()
     Engine.init();
 });
 
+Array.prototype.remove = function (index) 
+{
+    this.splice(index, 1);
+}
+
+
 var Engine =
 {
     init : function()
@@ -15,6 +21,14 @@ var Engine =
     update : function()
     {
         $GM.frame += 1;
+        
+        for(var i = $GM.updateList.length - 1; i >=0 ; i--)
+        {
+            if($GM.updateList[i].parent().length == 0)
+            {
+                $GM.updateList.remove(i);
+            }
+        }
         
         $GM.updateList.forEach(function(element)
         {

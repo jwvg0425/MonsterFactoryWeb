@@ -153,17 +153,38 @@ var Button =
     {
         if(button.hasClass("disabled"))
         {
-            if(button.data("isEnableState")())
+            if(button.data("isEnableState")(button))
             {
                 button.removeClass("disabled");
             }
         }
         else
         {
-            if(!button.data("isEnableState")())
+            if(!button.data("isEnableState")(button))
             {
                 button.addClass("disabled");
             }
         }
+    },
+    
+    checkButtonInGroupEnable : function(button)
+    {
+        var buttons = button.parent().find('.button');
+        var res = true;
+        
+        buttons.each( function()
+        {
+            var $this = $(this);
+            
+            if($this != button)
+            {
+                if($this.find('#cooldown').hasClass('cool'))
+                {
+                    res = false;
+                }
+            }
+        });
+        
+        return res;
     }
 };
