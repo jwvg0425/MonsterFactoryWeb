@@ -140,8 +140,8 @@ var GameManager =
     
     frame : 0,
     
-    money : 1000,
-    slave : 50,
+    money : 0,
+    slave : 0,
     colony : 0,
     maxColony : 2,
     mine : 0,

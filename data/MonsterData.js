@@ -13,7 +13,7 @@ var MonsterData =
                 "text" : "알 구매",
                 "tooltip" : "<p>콜로니에서 양육할 알을 구입합니다.</p>200 골드 소모",
                 "align" : "left",
-                "x" : "60px",
+                "x" : "110px",
                 "y" : "10px",
                 "click" : function(button)
                 {
@@ -57,7 +57,7 @@ var MonsterData =
                 "align" : "left",
                 "x" : "20px",
                 "y" : "10px",
-                "cooldown" : 10,
+                "cooldown" : 10000,
                 "click" : function(button)
                 {
                     Colony.addExp(button.parent(), 5);

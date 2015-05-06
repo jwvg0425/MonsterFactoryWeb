@@ -14,8 +14,6 @@ var Button =
             var tooltip = $('<div>').addClass('tooltip')
                             .html(options.tooltip);
             
-            element.append(tooltip);
-            
             element.hover(
             function()
             {
@@ -28,6 +26,8 @@ var Button =
             {
                 tooltip.css('display','none');
             });
+            
+            element.append(tooltip);
         }
         
         //가로 정렬인지 세로 정렬인지 설정
