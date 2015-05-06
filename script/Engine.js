@@ -68,6 +68,18 @@ var Engine =
                 }
             
                 colonyImage.src = "image/colony.png";
+                
+                var mineImage = new Image();
+                
+                mineImage.onload = function()
+                {
+                    for(var i = 0; i < $GM.mine; i++)
+                    {
+                        context.drawImage(mineImage, 500 + i*50, 94); 
+                    }
+                }
+                
+                mineImage.src = "image/mine.png";
             }
         }
         

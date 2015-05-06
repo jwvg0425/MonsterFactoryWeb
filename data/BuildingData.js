@@ -50,7 +50,7 @@ var BuildingData =
     "mine" :
     {
         "name" : "광산",
-        "img" : "image/colony.png",
+        "img" : "image/mine.png",
         "desc" : "광물을 채굴할 수 있는 시설입니다. 골드 획득량이 증가합니다.",
         "button" :
         {
@@ -102,7 +102,7 @@ var BuildingData =
         {
             "id" : "buy",
             "text" : "구매",
-            "tooltip" : "<p> 2000 골드 소모</p><p>30 노예 소모</p>",
+            "tooltip" : "<p> 2000 골드 소모</p><p>30 노예 소모</p><p>5 보석 소모</p>",
             "align" : "left",
             "x" : "110px",
             "y" : "10px",
@@ -118,6 +118,10 @@ var BuildingData =
                 {
                     "kind" : "slave",
                     "amount" : 30
+                },
+                {
+                    "kind" : "gem",
+                    "amount" : 5
                 }
             ],
             "notification" : function()
@@ -142,6 +146,7 @@ var BuildingData =
             "y" : "10px",
             "click" : function()
             {
+                $GM.addAuction();
             },
             "resource":
             [

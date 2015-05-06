@@ -21,5 +21,35 @@ var SceneData =
             ContainerData.building,
             ContainerData.infomation
         ]
+    },
+    
+    "prison" :
+    {
+        "id" : "prison",
+        "title" : "수용소",
+        "containers" :
+        [
+            ContainerData.infomation
+        ]
+    },
+    
+    "auction" :
+    {
+        "id" : "auction",
+        "title" : "경매장",
+        "containers" :
+        [
+            ContainerData.infomation
+        ]
+    },
+    
+    "dungeon" :
+    {
+        "id" : "dungeon",
+        "title" : "던전",
+        "containers" :
+        [
+            ContainerData.infomation
+        ]
     }
 };

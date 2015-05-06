@@ -68,6 +68,9 @@ var GameManager =
             Container.addObject($('div.container.buildings'),
                                 new Building.Building(BuildingData.mine));
             
+            Container.addObject($('div.container.buildings'),
+                                new Building.Building(BuildingData.auction));
+            
             var infomation = $('div.container.infomation');
             
             infomation.each(function()
@@ -76,7 +79,23 @@ var GameManager =
                 new Info.Info({
                     texts : function()
                     {
+                        return "보석 : " + $GM.gem;
+                    }
+                }));
+                
+                Container.addObject($(this),
+                new Info.Info({
+                    texts : function()
+                    {
                         return "광산 : " + $GM.mine + " / " + $GM.maxMine;
+                    }
+                }));
+                
+                Container.addObject($(this),
+                new Info.Info({
+                    texts : function()
+                    {
+                        return "경매장 : " + $GM.auction + " / " + $GM.maxAuction;
                     }
                 }));
             });
@@ -106,6 +125,10 @@ var GameManager =
                     "click" : function(button)
                     {
                         $GM.money += 10 * $GM.slave;
+                        if(Math.random() < 0.1)
+                        {
+                            $GM.gem += 1;
+                        }
                     },
                     "resource" :
                     [
@@ -128,6 +151,25 @@ var GameManager =
         Engine.draw();
     },
     
+    addAuction : function()
+    {
+        if($GM.auction == 0)
+        {
+             var auction = new Scene.Scene(SceneData["auction"]);
+            
+            $GM.addScene(auction);
+        }
+        
+        if($GM.auction >= $GM.maxAuction)
+        {
+            return;
+        }
+        
+        $GM.auction += 1;
+        
+        Engine.draw();
+    },
+    
     getMoneyPerSec : function()
     {
         return $GM.slave * ($GM.mine + 1);
@@ -140,12 +182,18 @@ var GameManager =
     
     frame : 0,
     
-    money : 0,
-    slave : 0,
+    money : 10000,
+    slave : 100,
+    gem : 0,
+    
     colony : 0,
     maxColony : 2,
     mine : 0,
-    maxMine : 1,
+    maxMine : 3,
+    prison : 0,
+    maxPrison : 1,
+    auction : 0,
+    maxAuction : 1,
     
     scenes : [],
     
