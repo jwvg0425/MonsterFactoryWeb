@@ -25,7 +25,7 @@ var Container =
             element.css("height", options.height);
         }
         
-        //버튼 추가
+        //오브젝트 추가
         if(options.objects != null)
         {
             var objects = options.objects();
@@ -37,5 +37,10 @@ var Container =
         }
         
         return element;
+    },
+    
+    addObject : function(container, object)
+    {
+        container.append(object);
     }
 };

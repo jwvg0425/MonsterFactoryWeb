@@ -64,6 +64,22 @@ var GameManager =
             var monster = new Scene.Scene(SceneData["monster"]);
             
             $GM.addScene(monster);
+            
+            Container.addObject($('div.container.buildings'),
+                                new Building.Building(BuildingData.mine));
+            
+            var infomation = $('div.container.infomation');
+            
+            infomation.each(function()
+            {
+                Container.addObject($(this),
+                new Info.Info({
+                    texts : function()
+                    {
+                        return "광산 : " + $GM.mine + " / " + $GM.maxMine;
+                    }
+                }));
+            });
         }
         
         if($GM.colony >= $GM.maxColony)
@@ -124,10 +140,10 @@ var GameManager =
     
     frame : 0,
     
-    money : 5000,
-    slave : 100,
+    money : 1000,
+    slave : 50,
     colony : 0,
-    maxColony : 1,
+    maxColony : 2,
     mine : 0,
     maxMine : 1,
     

@@ -68,11 +68,7 @@ var ContainerData =
             arr.push(
                 new Building.Building(BuildingData.colony)
             );
-            
-            arr.push(
-                new Building.Building(BuildingData.mine)
-            );
-            
+    
             return arr;
         }
     },
@@ -122,15 +118,6 @@ var ContainerData =
                     texts : function()
                     {
                         return "콜로니 : " + $GM.colony + " / " + $GM.maxColony;
-                    }
-                })
-            );
-            
-            arr.push(
-                new Info.Info({
-                    texts : function()
-                    {
-                        return "광산 : " + $GM.mine + " / " + $GM.maxMine;
                     }
                 })
             );
