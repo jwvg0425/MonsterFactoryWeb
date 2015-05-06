@@ -27,7 +27,7 @@ var BuildingData =
     "auction" :
     {
         "name" : "경매장",
-        "img" : "image/colony.png",
+        "img" : "image/auction.png",
         "desc" : "몬스터나 알을 사고 팔 수 있는 건물입니다.",
         "button" : ButtonData.auctionBuy
     }

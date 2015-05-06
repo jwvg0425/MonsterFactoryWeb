@@ -119,6 +119,17 @@ var ButtonData =
         "align" : "left",
         "x" : "110px",
         "y" : "10px",
+        "isEnableState" : function(button)
+        {
+            if($GM.auction >= $GM.maxAuction)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }   
+        },
         "click" : function()
         {
             $GM.addAuction();

@@ -68,18 +68,33 @@ var Engine =
                 }
             
                 colonyImage.src = "image/colony.png";
-                
+            }
+            
+            if($GM.mine > 0)
+            {
                 var mineImage = new Image();
                 
                 mineImage.onload = function()
                 {
                     for(var i = 0; i < $GM.mine; i++)
                     {
-                        context.drawImage(mineImage, 500 + i*50, 94); 
+                        context.drawImage(mineImage, 450 + i*50, 94); 
                     }
                 }
                 
                 mineImage.src = "image/mine.png";
+            }
+            
+            if($GM.auction > 0)
+            {
+                var auctionImage = new Image();
+                
+                auctionImage.onload = function()
+                {
+                    context.drawImage(auctionImage, 670, 94); 
+                }
+                
+                auctionImage.src = "image/auction.png";
             }
         }
         
