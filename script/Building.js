@@ -1,4 +1,4 @@
-var Building =
+var Building = 
 {
     Building : function(options)
     {

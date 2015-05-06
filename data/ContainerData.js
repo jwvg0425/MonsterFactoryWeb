@@ -42,7 +42,7 @@ var ContainerData =
                     {
                         $GM.money += $GM.getClickMoney();
                     },
-                    "notification" : "열심히 일해서 10 골드를 모았습니다."
+                    "notification" : "열심히 일해서 " + $GM.getClickMoney() + "골드를 모았습니다."
                 })
             );
             
