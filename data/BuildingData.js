@@ -91,5 +91,73 @@ var BuildingData =
                 return "광산을 건축 완료했습니다.";
             }
         }
+    },
+    
+    "prison" : 
+    {
+        "name" : "수용소",
+        "img" : "image/colony.png",
+        "desc" : "용사를 납치하여 가둘 수 있는 건물입니다.",
+        "button" :
+        {
+            "id" : "buy",
+            "text" : "구매",
+            "tooltip" : "<p> 2000 골드 소모</p><p>30 노예 소모</p>",
+            "align" : "left",
+            "x" : "110px",
+            "y" : "10px",
+            "click" : function()
+            {
+            },
+            "resource":
+            [
+                {
+                    "kind" : "money",
+                    "amount" : 2000
+                },
+                {
+                    "kind" : "slave",
+                    "amount" : 30
+                }
+            ],
+            "notification" : function()
+            {
+                return "수용소 건축을 완료했습니다.";
+            }
+        }
+    },
+    
+    "auction" :
+    {
+        "name" : "경매장",
+        "img" : "image/colony.png",
+        "desc" : "몬스터나 알을 사고 팔 수 있는 건물입니다.",
+        "button" :
+        {
+            "id" : "buy",
+            "text" : "구매",
+            "tooltip" : "<p> 1000 골드 소모</p><p>20 노예 소모</p>",
+            "align" : "left",
+            "x" : "110px",
+            "y" : "10px",
+            "click" : function()
+            {
+            },
+            "resource":
+            [
+                {
+                    "kind" : "money",
+                    "amount" : 1000
+                },
+                {
+                    "kind" : "slave",
+                    "amount" : 20
+                }
+            ],
+            "notification" : function()
+            {
+                return "경매장 건축을 완료했습니다.";
+            }
+        }
     }
 };
