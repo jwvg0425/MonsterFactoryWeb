@@ -54,7 +54,7 @@ var GameManager =
     
     updateBySecond : function()
     {
-        $GM.money += $GM.slave;
+        $GM.money += $GM.getMoneyPerSec();
     },
     
     addColony : function()
@@ -76,12 +76,57 @@ var GameManager =
         Engine.draw();
     },
     
+    addMine : function()
+    {
+        if($GM.mine == 0)
+        {
+            $('div.container.act').append(
+                new Button.Button({
+                    "id" : "mining",
+                    "text" : "채굴",
+                    "tooltip" : "<p>광산에서 채굴을 합니다</p>",
+                    "align" : "left",
+                    "cooldown" : 20000,
+                    "click" : function(button)
+                    {
+                        $GM.money += 10 * $GM.slave;
+                    },
+                    "resource" :
+                    [
+                    ],
+                    "notification" : "채굴을 완료했습니다."
+                })
+            );
+        }
+        
+        if($GM.mine >= $GM.maxMine)
+        {
+            return;
+        }
+        
+        $GM.mine += 1;
+        
+        Engine.draw();
+    },
+    
+    getMoneyPerSec : function()
+    {
+        return $GM.slave * ($GM.mine + 1);
+    },
+    
+    getClickMoney : function()
+    {
+        return 10 + $GM.mine * 5;
+    },
+    
     frame : 0,
     
-    money : 10000,
-    slave : 100,
+    money : 0,
+    slave : 0,
     colony : 0,
-    maxColony : 3,
+    maxColony : 1,
+    mine : 0,
+    maxMine : 1,
     
     scenes : [],
     

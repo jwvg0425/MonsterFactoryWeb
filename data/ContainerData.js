@@ -40,7 +40,7 @@ var ContainerData =
                     "cooldown" : 1000,
                     "click" : function(button)
                     {
-                        $GM.money += 10;
+                        $GM.money += $GM.getClickMoney();
                     },
                     "notification" : "열심히 일해서 10 골드를 모았습니다."
                 })
@@ -52,7 +52,7 @@ var ContainerData =
     
     "building" :
     {
-        "class" : "building",
+        "class" : "buildings",
         "head" : "건물",
         "width" : 430,
         "objects" : function()
@@ -61,6 +61,10 @@ var ContainerData =
             
             arr.push(
                 new Building.Building(BuildingData.colony)
+            );
+            
+            arr.push(
+                new Building.Building(BuildingData.mine)
             );
             
             return arr;
@@ -93,7 +97,7 @@ var ContainerData =
                 new Info.Info({
                     texts : function()
                     {
-                        return "골드 : " + $GM.money + "( +" + $GM.slave + "/s)";
+                        return "골드 : " + $GM.money + "( +" + $GM.getMoneyPerSec() + "/s)";
                     },
                 })
             );
@@ -112,6 +116,15 @@ var ContainerData =
                     texts : function()
                     {
                         return "콜로니 : " + $GM.colony + " / " + $GM.maxColony;
+                    }
+                })
+            );
+            
+            arr.push(
+                new Info.Info({
+                    texts : function()
+                    {
+                        return "광산 : " + $GM.mine + " / " + $GM.maxMine;
                     }
                 })
             );
