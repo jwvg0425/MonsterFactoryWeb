@@ -82,7 +82,7 @@ var Button =
                             //notification 발송
                             if(options.notification != null)
                             {
-                                Notification.Notification(options.notification);
+                                Notification.Notification(options.notification());
                             }
                         });
                     }
@@ -105,7 +105,7 @@ var Button =
                     //notification 발송
                     if(options.notification != null)
                     {
-                        Notification.Notification(options.notification);
+                        Notification.Notification(options.notification());
                     }
                 });
             }

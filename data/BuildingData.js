@@ -40,7 +40,10 @@ var BuildingData =
                     return true;
                 }
             },
-            "notification" : "콜로니를 건축 완료했습니다."
+            "notification" : function()
+            {
+                return "콜로니를 건축 완료했습니다.";
+            }
         }
     },
     
@@ -83,7 +86,10 @@ var BuildingData =
                     return true;
                 }   
             },
-            "notification" : "광산을 건축 완료했습니다."
+            "notification" : function()
+            {
+                return "광산을 건축 완료했습니다.";
+            }
         }
     }
 };

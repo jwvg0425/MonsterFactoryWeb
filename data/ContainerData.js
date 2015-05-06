@@ -27,7 +27,10 @@ var ContainerData =
                             "amount" : 50
                         }
                     ],
-                    "notification" : "노예로 부려먹을 인간을 1명 납치했습니다."
+                    "notification" : function()
+                    {
+                        return "노예로 부려먹을 인간을 1명 납치했습니다.";
+                    }
                 })
             );
             
@@ -42,7 +45,10 @@ var ContainerData =
                     {
                         $GM.money += $GM.getClickMoney();
                     },
-                    "notification" : "열심히 일해서 " + $GM.getClickMoney() + "골드를 모았습니다."
+                    "notification" : function()
+                    {
+                        return "열심히 일해서 " + $GM.getClickMoney() + "골드를 모았습니다.";
+                    }
                 })
             );
             

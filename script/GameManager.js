@@ -94,7 +94,10 @@ var GameManager =
                     "resource" :
                     [
                     ],
-                    "notification" : "채굴을 완료했습니다."
+                    "notification" : function()
+                    {
+                        return "채굴을 완료했습니다.";
+                    }
                 })
             );
         }

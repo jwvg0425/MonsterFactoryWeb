@@ -26,7 +26,10 @@ var MonsterData =
                         "amount" : 200
                     }
                 ],
-                "notification" : "몬스터의 알을 구매했습니다."
+                "notification" : function()
+                {
+                    return "몬스터의 알을 구매했습니다.";
+                }
             }
         ],
         "evolve" : function(colony)
@@ -59,7 +62,10 @@ var MonsterData =
                 {
                     Colony.addExp(button.parent(), 5);
                 },
-                "notification" : "알을 부드럽게 쓰다듬어주었습니다."
+                "notification" : function()
+                {
+                    return "알을 부드럽게 쓰다듬어주었습니다.";
+                }
             },
             {
                 "id" : "water",
@@ -79,7 +85,10 @@ var MonsterData =
                         "amount" : 100
                     }
                 ],
-                "notification" : "알에 물을 뿌려주었습니다."
+                "notification" : function()
+                {
+                    return "알에 물을 뿌려주었습니다.";
+                }
             },
             {
                 "id" : "talk",
@@ -92,7 +101,10 @@ var MonsterData =
                 {
                     Colony.addExp(button.parent(), 15);
                 },
-                "notification" : "알에게 말을 걸어주었습니다."
+                "notification" : function()
+                {
+                    return "알에게 말을 걸어주었습니다.";
+                }
             }
         ],
         "evolve" : function(colony)
