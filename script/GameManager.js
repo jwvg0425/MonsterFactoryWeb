@@ -161,8 +161,8 @@ var GameManager =
     
     frame : 0,
     
-    money : 10000,
-    slave : 100,
+    money : 0,
+    slave : 0,
     gem : 0,
     
     colony : 0,

@@ -25,7 +25,7 @@ var MonsterData =
         "name" : "알",
         "iconImage" : ["image/egg0.png"],
         "desc" : "몬스터의 알. 어떤 몬스터일지는 알 수 없다.",
-        "exp" : 100,
+        "exp" : 50,
         "buttons" :
         [
             ButtonData.stroke,
@@ -34,7 +34,10 @@ var MonsterData =
         ],
         "evolve" : function(colony)
         {
-            Colony.changeContents(colony, MonsterData.larva);
+            if(Math.random() < 0.5)
+                Colony.changeContents(colony, MonsterData.larva);
+            else
+                Colony.changeContents(colony, MonsterData.slime);
         }
     },
     "larva" :
@@ -48,6 +51,19 @@ var MonsterData =
             ButtonData.feed,
             ButtonData.meditation,
             ButtonData.sleep
+        ]
+    },
+    "slime" :
+    {
+        "name" : "슬라임",
+        "iconImage" : ["image/slime01.png","image/slime02.png",
+                       "image/slime01.png","image/slime03.png"],
+        "desc" : "꾸물거리는 젤리같이 생긴 몬스터.",
+        "exp" : 200,
+        "buttons" :
+        [
+            ButtonData.feed,
+            ButtonData.meditation
         ]
     }
 };

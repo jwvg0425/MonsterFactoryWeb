@@ -14,19 +14,6 @@ var Button =
             var tooltip = $('<div>').addClass('tooltip')
                             .html(options.tooltip);
             
-            element.hover(
-            function()
-            {
-                if(!element.hasClass('disabled'))
-                {
-                    tooltip.css('display','block');
-                }
-            },
-            function()
-            {
-                tooltip.css('display','none');
-            });
-            
             element.append(tooltip);
         }
         
@@ -73,7 +60,7 @@ var Button =
                         Button.consumeResource(element);
                         
                         cool.addClass('cool')
-                        .animate({width : "0%"}, options.cooldown, 
+                        .animate({width : "0%"}, options.cooldown, 'linear',
                         function()
                         {
                             cool.removeClass('cool').css("width","100%");

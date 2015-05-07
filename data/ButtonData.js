@@ -301,7 +301,7 @@ var ButtonData =
         ],
         "notification" : function()
         {
-            return "유충에게 먹이를 주었습니다.";
+            return "몬스터에게 먹이를 주었습니다.";
         },
         "isEnableState" :  Button.checkButtonInGroupEnable
     },
@@ -319,7 +319,7 @@ var ButtonData =
         },
         "notification" : function()
         {
-            return "유충의 명상이 끝났습니다.";
+            return "몬스터의 명상이 끝났습니다.";
         },
         "isEnableState" :  Button.checkButtonInGroupEnable
     },

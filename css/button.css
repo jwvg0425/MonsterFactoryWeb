@@ -48,8 +48,10 @@ div.button div.tooltip
 {
     position : absolute;
     display : none;
-    margin-left : 50px;
-    padding : 3px;
+    margin : 0px;
+    padding : 0px;
+    top : 40px;
+    left : -40px;
     background-color : white;
     z-index : 10;
     width : 200px;
@@ -61,4 +63,19 @@ div.button div.tooltip p
 {
     margin-top : 0px;
     margin-bottom : 5px;
+}
+
+div.button:hover div.tooltip
+{
+    display : block;
+}
+
+div.tooltip:hover
+{
+    display : none !important;
+}
+
+div.button.disabled:hover div.tooltip
+{
+    display : none !important;
 }
