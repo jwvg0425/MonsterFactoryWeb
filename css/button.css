@@ -74,8 +74,3 @@ div.tooltip:hover
 {
     display : none !important;
 }
-
-div.button.disabled:hover div.tooltip
-{
-    display : none !important;
-}

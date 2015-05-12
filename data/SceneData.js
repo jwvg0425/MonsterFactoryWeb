@@ -33,16 +33,6 @@ var SceneData =
         ]
     },
     
-    "auction" :
-    {
-        "id" : "auction",
-        "title" : "경매장",
-        "containers" :
-        [
-            ContainerData.infomation
-        ]
-    },
-    
     "dungeon" :
     {
         "id" : "dungeon",

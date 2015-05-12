@@ -134,7 +134,7 @@ var GameManager =
     {
         if($GM.auction == 0)
         {
-             var auction = new Scene.Scene(SceneData["auction"]);
+             var auction = new Scene.Scene(SceneData["dungeon"]);
             
             $GM.addScene(auction);
         }

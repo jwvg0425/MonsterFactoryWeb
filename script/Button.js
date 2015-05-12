@@ -6,7 +6,8 @@ var Button =
         .text(options.text)
         .attr('id',options.id)
         .data("resource",options.resource)
-        .data("update",Button.update);
+        .data("update",Button.update)
+        .data("cool", 0);
         
         //툴팁 존재 여부
         if(options.tooltip != null)
@@ -33,11 +34,8 @@ var Button =
             element.css("margin-top",options.y);
         }
         
-        if(options.isEnableState != null)
-        {
-            element.data("isEnableState",options.isEnableState);
-            $GM.updateList.push(element);
-        }
+        element.data("isEnableState",options.isEnableState);
+        $GM.updateList.push(element);
         
         if(options.click != null)
         {
@@ -59,10 +57,13 @@ var Button =
                     
                         Button.consumeResource(element);
                         
+                        element.data("cool",1);
+                        element.addClass("disabled");
                         cool.addClass('cool')
                         .animate({width : "0%"}, options.cooldown, 'linear',
                         function()
                         {
+                            element.data("cool",0);
                             cool.removeClass('cool').css("width","100%");
                             options.click(element);
                             
@@ -140,16 +141,41 @@ var Button =
     {
         if(button.hasClass("disabled"))
         {
-            if(button.data("isEnableState")(button))
+            if(!Button.checkResource(button))
+            {
+                return;
+            }
+            if(button.data("cool") == 1)
+            {
+                return;
+            }
+            
+            if(button.data("isEnableState") == null)
             {
                 button.removeClass("disabled");
+                return;
+            }
+            
+            if(button.data("isEnableState") != null &&
+               button.data("isEnableState")(button))
+            {
+                button.removeClass("disabled");
+                return;
             }
         }
         else
         {
-            if(!button.data("isEnableState")(button))
+            if(!Button.checkResource(button))
             {
                 button.addClass("disabled");
+                return;
+            }
+            
+            if(button.data("isEnableState") != null &&
+               !button.data("isEnableState")(button))
+            {
+                button.addClass("disabled");
+                return;
             }
         }
     },

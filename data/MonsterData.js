@@ -51,7 +51,10 @@ var MonsterData =
             ButtonData.feed,
             ButtonData.meditation,
             ButtonData.sleep
-        ]
+        ],
+        "evolve" : function(colony)
+        {
+        }
     },
     "slime" :
     {
@@ -64,6 +67,9 @@ var MonsterData =
         [
             ButtonData.feed,
             ButtonData.meditation
-        ]
+        ],
+        "evolve" : function(colony)
+        {
+        }
     }
 };
