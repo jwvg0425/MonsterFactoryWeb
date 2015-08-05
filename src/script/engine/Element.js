@@ -5,8 +5,6 @@ var Element = function()
     Node.apply(this, arguments);
     this.element = null;
     this.visible = true;
-    
-    
 }
 
 Element.prototype = new Node();
@@ -19,8 +17,7 @@ Element.prototype.init = function(elemType, elemClass, elemId)
     
     this.element = $("<" + elemType + ">")
                     .addClass(elemClass)
-                    .attr("id", elemId)
-                    .css("position","absolute");
+                    .attr("id", elemId);
     
     $("body").append(this.element);
     
