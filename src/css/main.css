@@ -1,0 +1,9 @@
+.scene
+{
+    position : absolute;
+    left : 10px;
+    top : 10px;
+    width : 800px;
+    height : 600px;
+    border : 1px solid black;
+}
