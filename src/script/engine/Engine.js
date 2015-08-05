@@ -1,8 +1,3 @@
-$(function()
-{
-    Engine.init();
-});
-
 var Engine =
 {
     interval : 100,
@@ -20,19 +15,26 @@ var Engine =
     
     update : function()
     {
-        for(var i =0; i < Engine.nodeList.length; i+=1)
-        {
-            Engine.nodeList[i].update(Engine.interval);
-        }
+        if(Engine.nowScene != null)
+            Engine.nowScene.update(Engine.interval);
     },
     
     render : function()
     {
-        for(var i = 0; i < Engine.nodeList.length; i+=1)
-        {
-            Engine.nodeList[i].render(Engine.interval);
-        }
+        if(Engine.nowScene != null)
+            Engine.nowScene.render(Engine.interval);
     },
     
-    nodeList : []
+    runScene : function(scene)
+    {
+        Engine.nowScene = scene;
+    },
+    
+    changeScene : function(scene)
+    {
+        //scene 변환 효과 넣기
+        Engine.nowScene = scene;
+    },
+    
+    nowScene : null
 }

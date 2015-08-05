@@ -4,6 +4,11 @@ var Ref = function()
     this.ref = 1;
 }
 
+Ref.prototype.init = function()
+{
+    return true;
+}
+
 Ref.prototype.addRef = function() 
 {
     this.ref += 1;
