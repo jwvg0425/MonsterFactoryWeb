@@ -20,7 +20,8 @@ Node.prototype.init = function()
 
 Node.prototype.addChild = function(child)
 {
-    this.childs.append(child);
+    Engine.nowScene.pool.push(child);
+    this.childs.push(child);
     child.parent = this;
 }
 

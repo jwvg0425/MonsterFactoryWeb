@@ -29,7 +29,7 @@ Ref.prototype.update = function(interval)
     //매 프레임 갱신 동작
 }
 
-Ref.prototype.render = function(interval)
+Ref.prototype.render = function()
 {
     //매 프레임 그리기 동작
 }

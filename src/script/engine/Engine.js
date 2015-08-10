@@ -32,7 +32,6 @@ var Engine =
     
     changeScene : function(scene)
     {
-        //scene 변환 효과 넣기
         Engine.nowScene = scene;
     },
     
