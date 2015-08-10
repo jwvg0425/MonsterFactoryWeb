@@ -6,11 +6,27 @@ $(function()
     
     scene.init("main");
     
-    var sprite = new Sprite();
+    var animation = new Animation();
     
-    sprite.init("image/colony.png");
+    animation.init([
+        {
+            length : 1,
+            src : "image/slime01.png"
+        },
+        {
+            length : 1,
+            src : "image/slime02.png"
+        },
+        {
+            length : 1,
+            src : "image/slime01.png"
+        },
+        {
+            length : 1,
+            src : "image/slime03.png"
+        }]);
     
-    scene.addChild(sprite);
+    scene.addChild(animation);
     
     Engine.runScene(scene);
 });

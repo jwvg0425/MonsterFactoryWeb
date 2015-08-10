@@ -26,11 +26,6 @@ Sprite.prototype.init = function(imagePath)
     this.image.src = imagePath;
 };
 
-Sprite.prototype.update = function(interval)
-{
-    
-}
-
 Sprite.prototype.render = function()
 {
     var canvas = Engine.nowScene.getCanvas();

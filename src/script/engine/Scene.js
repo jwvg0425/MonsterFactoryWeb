@@ -28,6 +28,10 @@ Scene.prototype.update = function(interval)
 
 Scene.prototype.render = function()
 {
+    var canvas = this.getCanvas();
+    
+    canvas.clearRect(0,0,800,600);
+    
     for(var i = 0; i < this.pool.length; i+=1)
     {
         this.pool[i].render();
