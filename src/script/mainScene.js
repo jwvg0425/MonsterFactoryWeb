@@ -15,8 +15,8 @@ MainScene.prototype.init = function()
     background.init('image/background.png');
     background.x = 0;
     background.y = 160 - 25;
-    
+    background.zOrder = -1;
     this.addChild(background);
-    
+
     return true;
 }

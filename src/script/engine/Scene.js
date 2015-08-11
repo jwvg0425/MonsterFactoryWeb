@@ -3,6 +3,7 @@ var Scene = function()
     Element.apply(this, arguments);
     this.pool = [];
     this.newPool = [];
+    this.canvas = null;
 }
 
 Scene.prototype = new Element();
@@ -10,11 +11,17 @@ Scene.prototype.constructor = Scene;
 
 Scene.prototype.init = function(id)
 {
-    if(!Element.prototype.init.apply(this, ["canvas", "scene", id]))
+    if(!Element.prototype.init.apply(this, ["div", "scene", id]))
         return false;
     
-    this.element[0].setAttribute('width',800);
-    this.element[0].setAttribute('height',600);
+    this.canvas = new Element();
+    this.canvas.init('canvas','sceneCanvas','sceneCanvas');
+    
+    this.canvas.element[0].setAttribute('width',800);
+    this.canvas.element[0].setAttribute('height',600);
+    
+    $('body').append(this.element);
+    this.addChild(this.canvas);
     
     return true;
 }
@@ -53,7 +60,7 @@ Scene.prototype.render = function()
 
 Scene.prototype.getCanvas = function()
 {
-    return this.element[0].getContext('2d');
+    return this.canvas.element[0].getContext('2d');
 }
 
 Scene.prototype.addChild = function(child)
@@ -61,4 +68,7 @@ Scene.prototype.addChild = function(child)
     this.newPool.push(child);
     this.childs.push(child);
     child.parent = this;
+    
+    if(child.element != null && child.element != undefined)
+        this.element.append(child.element);
 }

@@ -19,8 +19,6 @@ Element.prototype.init = function(elemType, elemClass, elemId)
                     .addClass(elemClass)
                     .attr("id", elemId);
     
-    $("body").append(this.element);
-    
     return true;
 }
 
@@ -31,10 +29,21 @@ Element.prototype.update = function(interval)
     this.element.css("top", this.y);
 }
 
+Element.prototype.addChild = function(child)
+{
+    Node.prototype.addChild.apply(this, [child]);
+
+    if(child.element != null && child.element != undefined)
+        this.element.append(child.element);
+}
+
 //element를 보이게 한다
 Element.prototype.visible = function(visible)
 {
     this.visible = visible;
     
-    if(visible);
+    if(visible)
+        this.element.show();
+    else
+        this.element.hide();
 }
