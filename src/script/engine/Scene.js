@@ -2,6 +2,7 @@ var Scene = function()
 {
     Element.apply(this, arguments);
     this.pool = [];
+    this.newPool = [];
 }
 
 Scene.prototype = new Element();
@@ -20,6 +21,18 @@ Scene.prototype.init = function(id)
 
 Scene.prototype.update = function(interval)
 {
+    if(this.newPool.length > 0)
+    {
+        for(var i = 0; i < this.newPool.length; i +=1)
+        {
+            this.pool.push(this.newPool[i]);
+        }
+        
+        this.pool.sort(function(a,b){return a.zOrder - b.zOrder;});
+        
+        this.newPool = [];
+    }
+    
     for(var i = 0; i < this.pool.length; i+=1)
     {
         this.pool[i].update(interval);
@@ -45,7 +58,7 @@ Scene.prototype.getCanvas = function()
 
 Scene.prototype.addChild = function(child)
 {
-    this.pool.push(child);
+    this.newPool.push(child);
     this.childs.push(child);
     child.parent = this;
 }

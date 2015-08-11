@@ -5,6 +5,7 @@ var Node = function()
     this.y = 0;
     this.childs = []
     this.parent = null
+    this.zOrder = 0;
 }
 
 Node.prototype = new Ref();
@@ -20,7 +21,7 @@ Node.prototype.init = function()
 
 Node.prototype.addChild = function(child)
 {
-    Engine.nowScene.pool.push(child);
+    Engine.nowScene.newPool.push(child);
     this.childs.push(child);
     child.parent = this;
 }
