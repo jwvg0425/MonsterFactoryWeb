@@ -2,31 +2,9 @@ $(function()
 {
     Engine.init();
     
-    var scene = new Scene();
+    var scene = new MainScene();
     
-    scene.init("main");
-    
-    var animation = new Animation();
-    
-    animation.init([
-        {
-            length : 1,
-            src : "image/slime01.png"
-        },
-        {
-            length : 1,
-            src : "image/slime02.png"
-        },
-        {
-            length : 1,
-            src : "image/slime01.png"
-        },
-        {
-            length : 1,
-            src : "image/slime03.png"
-        }]);
-    
-    scene.addChild(animation);
+    scene.init();
     
     Engine.runScene(scene);
 });
