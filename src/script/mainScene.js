@@ -13,10 +13,14 @@ MainScene.prototype.init = function()
     
     var background = new Sprite();
     background.init('image/background.png');
-    background.x = 0;
-    background.y = 160 - 25;
+    background.setPosition(0,160-25);
     background.zOrder = -1;
     this.addChild(background);
-
+    
+    var button = new Button();
+    button.init('test','test');
+    button.setPosition(20,170);
+    this.addChild(button);
+    
     return true;
 }

@@ -26,6 +26,12 @@ Node.prototype.addChild = function(child)
     child.parent = this;
 }
 
+Node.prototype.setPosition = function(x,y)
+{
+    this.x = x;
+    this.y = y;
+}
+
 Node.prototype.getWorldX = function()
 {
     if(this.parent == null)
